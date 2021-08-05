@@ -36,9 +36,6 @@
             <div class="col-2">
               <button type="submit" class="search-button">Search</button>
             </div>
-            <div class="col-2">
-              <button type="submit" class="current-button">Current</button>
-            </div>
           </div>
         </div>
       </form>
@@ -57,17 +54,21 @@
             <div class="col-3 rain">
               <br /><br /><br />
               <p>
-                Percipitation: <span id="percipitation">11</span>%<br />
+                Precipitation: <span id="precipitation">11</span>%<br />
                 Wind: <span id="wind">13</span> km/h
               </p>
             </div>
+            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt= "" id="icon" /> 
             <div class="col-3 current-forecast">
               <h2>
-                <div id="temperature-description">Cloudy</div>
+                <div id="temperature-description">Mostly Cloudy</div>
               </h2>
-              <h3>
-                <span id="temperature">24</span>°C
-              </h3>
+              <div>
+                  <h3>
+                      <strong id="temperature">18</strong>
+                      <span class="units"><a href="#" id="celcius-link">°C</a> /<a href="#" id="fahrenheit-link">°F</a></span>   
+                    </h3>
+              </div>                                
             </div>
           </div>
         </div>
@@ -108,7 +109,6 @@
         </div>
       </div>
     </div>
-    <script src="weather.js"></script>
-    <a href="https://github.com/Leah1484/My-Weather-Application">Open source code,</a>by Njoki Leah
+  <script src="weather.js"></script>
   </body>
 </html>
