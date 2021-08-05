@@ -34,20 +34,9 @@ p {
   padding: 10px;
   transition: all 0.3s;
   width: 100px;
+  margin-left: 40px;
 }
-.current-button {
-  background: blueviolet;
-  border-color: green;
-  border-style: solid;
-  color: white;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  margin: 0 auto;
-  padding: 10px;
-  transition: all 0.3s;
-  width: 100px;
-}
+
 .search:hover {
   background: white;
   border: 2px solid #33313;
@@ -81,4 +70,33 @@ p {
 }
 .fa-cloud-showers-heavy {
   font-size: 30px;
+}
+#icon {
+  position: relative;
+  bottom: 100px;
+  max-width: 150px;
+  margin-top: 100px;
+}
+#temperature {
+  font-size: 45px;
+}
+a {
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+}
+.degrees:hover {
+  color: #245bce;
+  cursor: pointer;
+}
+.units {
+  font-size: 15px;
+}
+#celcius-link {
+  font-size: 15px;
+}
+#fahrenheit-link {
+  font-size: 15px;
 }
