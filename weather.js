@@ -5,7 +5,13 @@ let currentTime = document.querySelector(".currentTime");
 
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 let days = [
   "Sunday",
@@ -40,6 +46,7 @@ function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#search-input");
+<<<<<<< Updated upstream
   cityElement.innerHTML = cityInput.value;
 
   let apiKey = "94773ba6c916935cc26bdf53ae17c765";
@@ -47,11 +54,116 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(weatherCondition);
+=======
+  if (cityInput.value) {
+    cityElement.innerHTML = `${cityInput.value}`;
+  } else {
+    alert("Enter a city");
+  }
+>>>>>>> Stashed changes
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
+<<<<<<< Updated upstream
+=======
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function formatHour(timestamp) {
+  let time = new Date(timestamp * 1000);
+  let forecastHour = time.getHours();
+  let forecastHours = [
+    "1:00",
+    "2:00",
+    "3:00",
+    "4:00",
+    "5:00",
+    "6:00",
+    "7:00",
+    "8:00",
+    "9:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00",
+    "24:00",
+  ];
+  return forecastHours[forecastHour];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let hourlyForecast = response.data.hourly;
+  let forecastElement = document.querySelector("#forecast");
+  let hourlyForecastElement = document.querySelector("#hourly-forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class= "row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+          <img src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"" class="icons" />
+         <div class = "weather-forecast-temperatures">
+           <span class = "weather-forecast-temperature-max">${Math.round(
+             forecastDay.temp.max
+           )}°</span> <br />
+         <span class = "weather-forecast-temperature-min">${Math.round(
+           forecastDay.temp.min
+         )}°</span>
+        </div>
+      </div>`;
+    }
+  });
+
+  let hourlyForecastHTML = `<div class="row"> `;
+  hourlyForecast.forEach(function (forecastHour, index) {
+    if (index < 6) {
+      hourlyForecastHTML =
+        hourlyForecastHTML +
+        `
+    <div class="col-2">
+      ${formatHour(forecastHour.dt)}
+      <strong>${Math.round(forecastHour.temp)}°</strong>
+    </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  hourlyForecastHTML = hourlyForecastHTML + ` </div>`;
+  hourlyForecastElement.innerHTML = hourlyForecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "94773ba6c916935cc26bdf53ae17c765";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+>>>>>>> Stashed changes
 function weatherCondition(response) {
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
@@ -63,10 +175,17 @@ function weatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+<<<<<<< Updated upstream
   celsiusTemperature = response.data.main.temp;
 
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsiusTemperature);
+=======
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+
+  celsiusTemperature = response.data.main.temp;
+>>>>>>> Stashed changes
 
   let description = document.querySelector("#temperature-description");
   description.innerHTML = response.data.weather[0].description;
@@ -81,19 +200,37 @@ function weatherCondition(response) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(weatherCondition);
-}
 
+<<<<<<< Updated upstream
 function locatePosition(position) {
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
 
+=======
+  getForecast(response.data.coord);
+}
+
+function showCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  searchCity(searchInput.value);
+}
+
+function searchCity(cityName) {
+>>>>>>> Stashed changes
   let apiKey = "94773ba6c916935cc26bdf53ae17c765";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(weatherCondition);
 }
 
+let formSearcher = document.querySelector("form");
+formSearcher.addEventListener("submit", showCity);
+
+searchCity("Nairobi");
+
+>>>>>>> Stashed changes
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -114,5 +251,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+<<<<<<< Updated upstream
 
 search("Nairobi,Kenya");
+=======
+>>>>>>> Stashed changes
