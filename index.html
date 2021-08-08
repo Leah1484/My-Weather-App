@@ -35,20 +35,22 @@
             </div>
             <div class="col-2">
               <button type="submit" class="search-button">Search</button>
+              <form>
+                <button type="submit" class="search-button">Search</button>
+              </form>
             </div>
           </div>
         </div>
       </form>
       <br />
       <div class="total-forecast">
-        <div class="container day-forecast">
+        <div class="container-day-forecast">
           <div class="row">
             <div class="col-3 city">
-              <h2><span id="city">Nairobi, Kenya</span></h2>
+              <h2><span id="city">Nairobi</span></h2>
               <p>
-              <span class="currentDate">Saturday 10 July</span><br />
-              <span class="currentTime">15:00</span>
-            </p>
+                <span class="currentDate"></span><br />
+                <span class="currentTime"></span>
               </p>
             </div>
             <div class="col-3 rain">
@@ -69,47 +71,50 @@
                       <span class="units"><a href="#" id="celcius-link">°C</a> /<a href="#" id="fahrenheit-link">°F</a></span>   
                     </h3>
               </div>                                
+                Precipitation: <span id="precipitation"></span>%<br />
+                Wind: <span id="wind"></span> km/h
+              </p>
+            </div>
+            <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt=""
+              id="icon"
+            />
+            <div class="col-3 current-forecast">
+              <h2>
+                <div id="temperature-description"></div>
+              </h2>
+              <div>
+                <h3>
+                  <strong id="temperature"></strong>
+                  <span class="units"
+                    ><a href="#" id="celcius-link">°C</a> /<a
+                      href="#"
+                      id="fahrenheit-link"
+                      >°F</a
+                    ></span
+                  >
+                </h3>
+              </div>
             </div>
           </div>
         </div>
         <br />
-        <div class="container week-forecast">
-          <div class="row">
-            <div class="col-2">
-              <h4>Sun</h4>
-              <p><i class="fas fa-cloud-sun"></i></p>
-              <p><strong>21°C</strong> <small>14°C</small></p>
-            </div>
-            <div class="col-2">
-              <h4>Mon</h4>
-              <p><i class="fas fa-cloud-showers-heavy"></i></p>
-              <p><strong>22°C</strong> <small>14°C</small></p>
-            </div>
-            <div class="col-2">
-              <h4>Tue</h4>
-              <p><i class="fas fa-cloud-showers-heavy"></i></p>
-              <p><strong>21°C</strong> <small>14°C</small></p>
-            </div>
-            <div class="col-2">
-              <h4>Wed</h4>
-              <p><i class="fas fa-cloud-sun"></i></p>
-              <p><strong>21°C</strong> <small>14°C</small></p>
-            </div>
-            <div class="col-2">
-              <h4>Thu</h4>
-              <p><i class="fas fa-cloud-sun"></i></p>
-              <p><strong>23°C</strong> <small>13°C</small></p>
-            </div>
-            <div class="col-2">
-              <h4>Fri</h4>
-              <p><i class="fas fa-cloud-sun"></i></p>
-              <p><strong>23°C</strong> <small>13°C</small></p>
-            </div>
-          </div>
-        </div>
+        <div class="hourlyforecast" id="hourly-forecast"></div>
+        <br />
+
+        <div class="weather-forecast" id="forecast"></div>
       </div>
     </div>
   <a href="https://github.com/Leah1484/My-Weather-Application" target="blank" id="source">Open source code-</a> by Njoki Leah
-  <script src="weather.js"></script>
+<script src="weather.js"></script>
+    <script src="weather.js"></script>
+    <a
+      href="https://github.com/Leah1484/My-Weather-Application"
+      target="blank"
+      id="source"
+      >Open source code-</a
+    >
+    by Njoki Leah
   </body>
 </html>
