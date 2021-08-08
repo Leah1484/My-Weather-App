@@ -46,28 +46,16 @@ function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#search-input");
-<<<<<<< Updated upstream
-  cityElement.innerHTML = cityInput.value;
-
-  let apiKey = "94773ba6c916935cc26bdf53ae17c765";
-  let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${unit}`;
-
-  axios.get(apiUrl).then(weatherCondition);
-=======
   if (cityInput.value) {
     cityElement.innerHTML = `${cityInput.value}`;
   } else {
     alert("Enter a city");
   }
->>>>>>> Stashed changes
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-<<<<<<< Updated upstream
-=======
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -163,7 +151,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
->>>>>>> Stashed changes
 function weatherCondition(response) {
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
@@ -175,17 +162,10 @@ function weatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-<<<<<<< Updated upstream
-  celsiusTemperature = response.data.main.temp;
-
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-=======
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsiusTemperature);
 
   celsiusTemperature = response.data.main.temp;
->>>>>>> Stashed changes
 
   let description = document.querySelector("#temperature-description");
   description.innerHTML = response.data.weather[0].description;
@@ -201,12 +181,6 @@ function weatherCondition(response) {
 
   axios.get(apiUrl).then(weatherCondition);
 
-<<<<<<< Updated upstream
-function locatePosition(position) {
-  let longitude = position.coords.longitude;
-  let latitude = position.coords.latitude;
-
-=======
   getForecast(response.data.coord);
 }
 
@@ -217,7 +191,6 @@ function showCity(event) {
 }
 
 function searchCity(cityName) {
->>>>>>> Stashed changes
   let apiKey = "94773ba6c916935cc26bdf53ae17c765";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
@@ -230,7 +203,6 @@ formSearcher.addEventListener("submit", showCity);
 
 searchCity("Nairobi");
 
->>>>>>> Stashed changes
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -251,8 +223,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celcius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-<<<<<<< Updated upstream
-
-search("Nairobi,Kenya");
-=======
->>>>>>> Stashed changes
