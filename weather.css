@@ -16,6 +16,33 @@ h2 {
 p {
   text-align: left;
 }
+.hourlyforecast,
+.weather-forecast {
+  width: 630px;
+  padding: 8px;
+  margin: auto 0;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-size: 23px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.weather-forecast-temperature-max{
+  font-weight: bold;
+}
+.weather-forecast-temperature-min{
+  font-size: 18px;
+}
+
+.weather-forecast {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+.icons {
+  width: 55px;
+}
+
 .weather-app {
   border-style: solid;
   border-width: 1px;
@@ -52,6 +79,9 @@ p {
   padding: 10px;
   
 }
+.units{
+  font-size: 15px;
+}
 .city {
   border-style: solid;
   border-width: 1px;
@@ -79,77 +109,23 @@ p {
 #temperature {
   font-size: 45px;
 }
+#source{
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+}
 a {
   background: transparent;
   border: none;
   color: black;
-  font-size: 30px;
+  font-size: 15px;
   text-decoration: none;
 
 .degrees:hover {
   color: #245bce;
   cursor: pointer;
 }
-.units {
-  font-size: 15px;
-}
-#celcius-link {
-  font-size: 15px;
-}
-#fahrenheit-link {
-  font-size: 15px;
-}
-#source{
-  font-size: 15px;
-  color: blue;
-  text-decoration: none;
-}
-.hourlyforecast,
-.weather-forecast {
-  width: 505px;
-  padding: 8px;
-  margin: auto 0;
-  border-radius: 8px;
-  border: 2px solid #385170;
-  font-size: 23px;
-  text-align: center;
-  font-weight: 500;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-.hourlyforecast {
-  background: linear-gradient(
-    180deg,
-    rgb(250, 246, 246) 4.7%,
-    rgb(253, 240, 233) 97.6%
-  );
-}
 
-.weather-forecast {
-  font-size: 28px;
-  letter-spacing: 2px;
-  background: linear-gradient(
-    180deg,
-    rgb(253, 240, 233) 4.7%,
-    rgb(250, 198, 205) 97.6%
-  );
-}
-
-.hourlytemperature,
-.weather-forecast-temperature-min {
-  font-size: 25px;
-  text-align: center;
-  font-weight: 500;
-}
-.hourlytemperature,
-.weather-forecast-temperature-max {
-  font-weight: bold;
-  text-align: center;
-  font-weight: 500;
-}
-
-
-.icons {
-  width: 30px;
-}
 
 
