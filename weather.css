@@ -97,11 +97,9 @@ em {
 }
 #search-button {
   font-size: 14px;
-  margin: 0 auto;
   padding: 10px;
   transition: all 0.3s;
   width: 100px;
-  margin-left: 40px;
   background-color: #d77fa1;
   border-radius: 10px;
 }
