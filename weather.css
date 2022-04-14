@@ -55,9 +55,6 @@ em {
 .weather-forecast {
   padding: 8px;
   color: #091353;
-  margin: auto 0;
-  border-radius: 8px;
-  border: 2px solid black;
   font-size: 18px;
   text-align: center;
   font-weight: 500;
