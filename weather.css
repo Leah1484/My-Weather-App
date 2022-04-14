@@ -1,32 +1,60 @@
 body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h1 {
+  color: #baabda;
+  font-size: 40px;
+  line-height: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0;
   display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  max-width: 700px;
-  top: 100px;
-  left: 100px;
-  right: 100px;
 }
-h2 {
-  text-align: left;
-  padding: 13px;
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #091353;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+li:first-letter {
   text-transform: capitalize;
-  font-weight: bolder;
-  color: blue;
 }
-p {
-  text-align: left;
+em {
+  color: rgb(48, 48, 131);
+  font-size: 18px;
 }
-em{
-  color: blue;
+.weather-app-wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
 }
-.currentTime{
+
+.weather-app {
+  color: #d6e5fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 20px;
+  border: 1px solid #d6e5fa;
+}
+.city-info {
+  margin-bottom: 20px;
+}
+.currentTime {
   font-weight: bolder;
 }
 .hourlyforecast,
 .weather-forecast {
-  width: 630px;
   padding: 8px;
+  color: #091353;
   margin: auto 0;
   border-radius: 8px;
   border: 2px solid black;
@@ -35,11 +63,11 @@ em{
   font-weight: 500;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
-.weather-forecast-temperature-max{
+.weather-forecast-temperature-max {
   font-weight: bold;
   font-size: 20px;
 }
-.weather-forecast-temperature-min{
+.weather-forecast-temperature-min {
   font-size: 14px;
 }
 
@@ -47,87 +75,45 @@ em{
   font-size: 20px;
   letter-spacing: 2px;
 }
-.icons {
-  width: 45px;
-}
-
-.weather-app {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: wheat;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-.search-button {
-  background: white;
-  border-color: green;
-  border-style: solid;
-  color: black;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  margin: 0 auto;
-  padding: 10px;
-  transition: all 0.3s;
-  width: 100px;
-  margin-left: 40px;
-}
-
-.search:hover {
-  background: white;
-  border: 2px solid #33313;
-  color: #333133;
-  cursor: pointer;
-}
-.total-forecast {
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-  
-}
-.units{
-  font-size: 15px;
-}
-.city {
-  border-style: solid;
-  border-width: 1px;
-  border-right: none;
-  width: 120px;
-  height: 150px;
-}
 .rain {
   border-style: solid;
   border-width: 1px;
   border-left: none;
   height: 150px;
 }
-.container-day-forecast{
-  height: 150px;
+.weather-temperature img {
+  margin-right: 20px;
+  margin-left: 20px;
+  float: left;
+  height: 120px;
+  width: 120px;
+  margin-top: -25px;
+}
+.weather-temperature strong {
+  color: #091353;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+}
+#search-button {
+  font-size: 14px;
+  margin: 0 auto;
   padding: 10px;
+  transition: all 0.3s;
+  width: 100px;
+  margin-left: 40px;
+  background-color: #d77fa1;
+  border-radius: 10px;
 }
-
-#icon {
-  position: relative;
-  bottom: 100px;
-  max-width: 150px;
-  margin-top: 100px;
-}
-#temperature-description{
+#temperature-description {
   margin-bottom: 0px;
 }
-#temperature {
-  font-size: 48px;
-  color: blue;
-}
-#find{
-  color: blue;
+#find {
+  color: #091353;
   text-decoration: underline;
 }
-#source{
-  font-size: 15px;
-  margin-top: 5px;
+#me {
+  color: #091353;
 }
 a {
   background: transparent;
@@ -135,11 +121,4 @@ a {
   color: black;
   font-size: 15px;
   text-decoration: none;
-
-.degrees:hover {
-  color: #245bce;
-  cursor: pointer;
 }
-
-
-
