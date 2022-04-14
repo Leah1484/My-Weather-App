@@ -53,12 +53,10 @@ em {
 }
 .hourlyforecast,
 .weather-forecast {
-  padding: 30px;
   color: #091353;
   font-size: 18px;
   text-align: center;
   font-weight: 500;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .weather-forecast-temperature-max {
   font-weight: bold;
