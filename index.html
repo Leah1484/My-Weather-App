@@ -19,90 +19,94 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="weather-app">
-      <form id="search-form">
-        <div class="container enter-city">
-          <div class="row">
-            <div class="col-8">
-              <input
-                type="text"
-                id="search-input"
-                class="form-control"
-                placeholder="Enter a city"
-                autofocus="on"
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-2">
-              <form>
-                <button type="submit" class="search-button">Search</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </form>
-      <br />
-      <div class="total-forecast">
-        <div class="container-day-forecast">
-          <div class="row">
-            <div class="col-3 city">
-              <h2><span id="city">Nairobi</span></h2>
-              <p>
-                <span class="currentDate"></span><br />
-                <span class="currentTime"></span>
-              </p>
-            </div>
-            <div class="col-3 rain">
-              <br /><br /><br />
-              <p>
-                Precipitation: <span id="precipitation"></span>%<br />
-                Wind: <span id="wind"></span> km/h
-              </p>
-            </div>
-            <img
-              src="http://openweathermap.org/img/wn/04d@2x.png"
-              alt=""
-              id="icon"
-            />
-            <div class="col-3 current-forecast">
-              <h2>
-                <div id="temperature-description"></div>
-              </h2>
-              <div>
-                <h3>
-                  <strong id="temperature"></strong>
-                  <span class="units"
-                    ><a href="#" id="celcius-link">°C</a>/<a
-                      href="#"
-                      id="fahrenheit-link"
-                      >°F</a
-                    ></span
-                  >
-                </h3>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form">
+            <div class="container enter-city">
+              <div class="row">
+                <div class="col-8">
+                  <input
+                    type="text"
+                    id="search-input"
+                    class="form-control"
+                    placeholder="Enter a city"
+                    autofocus="on"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="col-2">
+                  <form>
+                    <button type="submit" id="search-button">Search</button>
+                  </form>
+                </div>
               </div>
             </div>
+          </form>
+          <div class="city-info">
+            <h1 id="city">Nairobi</h1>
+            <ul>
+              <li>
+                <span class="currentDate"></span>
+                <span class="currentTime"></span>
+              </li>
+              <li id="temperature-description"></li>
+            </ul
           </div>
-        </div>
-        <br />
-        <em>The next few hours...</em>
-        <div class="hourlyforecast" id="hourly-forecast"></div>
-        <br />
-        <em>The next few days...</em>
-
-        <div class="weather-forecast" id="forecast"></div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" id="icon" class="float-left" alt="" />
+                <div class="float-left">
+                  <strong id="temperature"></strong>
+                  <span class="units">
+                    <a href="#" id="celcius-link">°C</a>
+                    <em>/</em>
+                    <a
+                          href="#"
+                          id="fahrenheit-link"
+                          >°F</a>
+                  </span>
+                </div>  
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>
+                  Precipitation:
+                  <span id="precipitation"></span>
+                  %
+                </li>
+                <li>
+                  Wind:
+                  <span id="wind"></span>
+                  km/h
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <em>The next few hours...</em>
+          <div class="hourlyforecast" id="hourly-forecast"></div>
+          <br />
+          <em>The next few days...</em>
+          <div class="weather-forecast" id="forecast"></div>
+            <div id="source">
+              <a
+            href="https://github.com/Leah1484/My-Weather-Application"
+            target="_blank"
+            id="find"
+            >Open source code</a>
+            <em>by</em>
+            <a
+            href="https://www.linkedin.com/in/leah-wamweru-313b89173/"
+            target="_blank"
+            id="find"
+            >Leah Wamweru</a>
+            </div>
       </div>
-    </div>
-    <div id="source">
-      <a
-        href="https://github.com/Leah1484/My-Weather-Application"
-        target="_blank"
-        id="find"
-        >Open source code</a
-      >-by
-      <a href="https://www.linkedin.com/in/leah-wamweru-313b89173/" target="_blank" id="find"
-        >Njoki Leah</a
-      >
     </div>
     <script src="weather.js"></script>
   </body>
 </html>
+
